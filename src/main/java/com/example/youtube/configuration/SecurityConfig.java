@@ -21,7 +21,7 @@ public class SecurityConfig {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         String password = UUID.randomUUID().toString();
-        System.out.println("User Password Mazgi: " + password);
+        System.out.println("User Password: " + password);
 
         UserDetails user = User.builder()
                 .username("user")
@@ -36,13 +36,17 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
-            authorizationManagerRequestMatcherRegistry
-                    .anyRequest()
-                    .authenticated();
-        }).formLogin(Customizer.withDefaults());
 
-        http.csrf(Customizer.withDefaults());
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/index.html", "/").permitAll()
+                        .anyRequest().authenticated()
+                )
+
+                .formLogin(Customizer.withDefaults()
+                );
+
+        //http.csrf().disable();
         http.cors(Customizer.withDefaults());
 
         return http.build();
