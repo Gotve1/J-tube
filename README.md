@@ -1,18 +1,6 @@
-test api post request
+# This project represents plain vodeo-sharing platform business logic made using Spring Framework. 
 
-{
-    "profile": {
-        "id": "123e4567-e89b-12d3-a456-426614174000"
-    },
-    "email": "test@email.com",
-    "name": "bobr",
-    "password": "testpassword123",
-    "photo": "photo1.jpg",
-    "role": "test role",
-    "description": "test description",
-    "status": "OK",
-    "surname": "testov",
-    "banner": "image.jpg"
-}
-
-![Capture](https://github.com/user-attachments/assets/e16f1169-f2ff-4e66-80bc-123ac2a320de)
+## Feature list
+- Endpoint protection using Spring Security module.
+- Registration page.
+- Reimplemented fundamental business logic of famous video-sharing platform
