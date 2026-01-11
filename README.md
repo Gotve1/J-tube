@@ -3,4 +3,5 @@
 ## Feature list
 - Endpoint protection using Spring Security module.
 - Registration page.
-- Reimplemented fundamental business logic of famous video-sharing platform
+- Reimplemented fundamental business logic of famous video-sharing platform.
+- Dynamic page generation using Thymeleaf
